@@ -4,7 +4,7 @@ A cloudflare ddns client by go
 这是一个由go编写的cloudflare 动态域名解析程序  
 
 # 如何使用
-1. 先在Cloudlfare添加一个API令牌，允许其编辑所有DNS区域，并记下API KEY(**只会显示一次**)  
+1. 先在Cloudflare添加一个API令牌，允许其编辑所有DNS区域，并记下API KEY(**只会显示一次**)  
 
 ![API](img/1.JPG)  
 
@@ -24,6 +24,6 @@ A cloudflare ddns client by go
 - cron:填写检查IP更新周期的cron表达式，比如你要每30秒检查一次：*/30 * * * * ?
 - cn:表示是否开启中国大陆加速，如果你的机器位于中国大陆，请填true
 - ipv6:表示是否绑定本机公网IPV6，如果为false，则绑定本机公网IPV4
-- proxied:表示否开启cloudlfare CDN  
+- proxied:表示是否开启cloudflare CDN，默认为false，不开启。  
 
 5. 直接运行本程序带上配置文件的路径作为参数即可，若不带参数运行，第一次会在当前目录生成config.json作为默认配置文件
