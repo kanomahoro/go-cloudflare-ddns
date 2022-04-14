@@ -12,11 +12,12 @@ import (
 )
 
 //cloudflare ddns client By:Harry 2022/4/10
-var staus chan bool
-var Config config.Config
-var InitStatus bool = false
-var currect string
-var currectID string
+var (
+	Config     config.Config
+	InitStatus bool
+	currect    string
+	currectID  string
+)
 
 const RETRY int = 5
 
@@ -79,7 +80,6 @@ func loop() {
 		}
 	}
 	fmt.Println("---------------------------------------------------------------------")
-	staus <- true
 }
 func initialization() {
 	var i int
@@ -290,7 +290,5 @@ func main() {
 	}
 	timer.Start()
 	//阻塞主线程，直到用户手动停止程序
-	for {
-		<-staus
-	}
+	select {}
 }
